@@ -27,5 +27,5 @@ Nexus AI is built on a **Choreography-based Saga Pattern**, decoupling long-runn
 
 ### Step 1: Clone the Repository
 ```bash
-git clone [https://github.com/your-username/NexusAI.git](https://github.com/your-username/NexusAI.git)
+git clone https://github.com/vishalsgite/ai-youtube.git
 cd NexusAI
