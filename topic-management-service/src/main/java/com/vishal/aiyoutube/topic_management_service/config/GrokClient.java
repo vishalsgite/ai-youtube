@@ -54,7 +54,7 @@ public class GrokClient {
      * @throws AnalysisProcessingException if the API call or parsing fails.
      */
     public String chat(String systemPrompt, String userPrompt) {
-        // 1. Prepare Request Body: Constructing the standard Chat Completion JSON structure
+        //Prepare Request Body: Constructing the standard Chat Completion JSON structure
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("model", model);
         requestBody.put("temperature", temperature);
@@ -66,7 +66,7 @@ public class GrokClient {
 
         log.debug("Sending query to Groq Cloud using model: {}", model);
 
-        // 2. Execute Request: Using WebClient to post the payload and handle status errors
+        //Execute Request: Using WebClient to post the payload and handle status errors
         String rawResponse = grokWebClient.post()
                 .uri("/openai/v1/chat/completions")
                 .header("Authorization", "Bearer " + apiKey)
@@ -83,7 +83,7 @@ public class GrokClient {
                 .bodyToMono(String.class)
                 .block(); // Synchronous block to wait for the normalization before proceeding
 
-        // 3. Parse and Log Usage: Extracting the content and monitoring token consumption
+        //Parse and Log Usage: Extracting the content and monitoring token consumption
         try {
             GrokChatResponse response = lenientMapper.readValue(rawResponse, GrokChatResponse.class);
 
