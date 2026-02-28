@@ -34,7 +34,6 @@ public class KafkaProducerConfig {
     public ProducerFactory<String, TopicSubmittedEvent> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
 
-        // FIXED: Uses the variable instead of hardcoded "localhost"
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
